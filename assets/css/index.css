@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 3;
+}
+
+.navbar{
+    background-color: darkgray;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    padding: 10px;
+}
+
+.navbar a{
+    color: whitesmoke;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar .menu{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar a:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.navbar .hamburgur{
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.card{
+    width: 600px;
+    height: 700px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px darkgray;
+}
+
+.footer{
+    background-color: darkgray;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    padding: 0;
+    z-index: 1000;
+}
+
+.footer p{
+    font-size: 20px;
+}
+
+
+
+
+/*Så att sidan funkar på mindre skärmar*/
+
+
+@media (max-width: 768px) {
+    .navbar .menu{
+        display: none;
+    }
+
+    .navbar .hamburgur{
+        display: flex;
+    }
+
+    .navbar.responsive .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        width: 100%;
+        background-color: darkgray;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar.responsive .menu li{
+        margin: 10px;
+    }
+
+}
