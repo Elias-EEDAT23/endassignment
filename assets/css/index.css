@@ -10,6 +10,8 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 3;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /* Styles för navigeringsmenyn */
@@ -65,7 +67,7 @@ body{
 /* Styles för innehållet */
 .card{
     width: 600px;
-    height: 700px;
+    height: 400px;
     margin: 20px;
     text-align: center;
     box-shadow: 0 0 5px darkgray;
@@ -98,9 +100,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky; /* Gör att footern följer med när man scrollar */
+    position: fixed;  /*Gör att footern följer med när man scrollar */
     padding: 0;
     z-index: 1000;
+    bottom: 0;
+    margin-top: auto;
+    width: 100%;
 }
 
 .footer p{
@@ -193,7 +198,7 @@ body{
     position: absolute;
     text-align: center;
     width: 100%;
-    bottom: 10px; /* Avstånd från botten av containern */
+    top: 10px; /* Avstånd från toppen av containern */
     left: 50%; /* Centrera indikatorpunkterna horisontellt */
     transform: translateX(-50%); /* Justera för centreringen */
     display: flex;
