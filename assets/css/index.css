@@ -1,21 +1,25 @@
+/* Default setting för hela dokumentet*/
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Default setting för hela bodyn, bestämmer font och avstånd mellan rader*/
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 3;
 }
 
+/* Styles för navigeringsmenyn */
 .navbar{
     background-color: darkgray;
     color: whitesmoke;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: sticky; /* Gör att menyn följer med när man scrollar */
     padding: 10px 20px;
 }
 
@@ -36,16 +40,19 @@ body{
     cursor: pointer;
 }
 
+/* Meny för små skärmar*/
 .navbar .hamburgur{
     font-size: 40px;
     cursor: pointer;
-    display: none;
+    display: none; /* Dölj hamburgarmenyikonen som standard */
 }
 
 .navbar .menu li{
     margin-right: 20px;
 }
 
+
+/* Styles för huvudinnehållet */
 .content{
     display: flex;
     justify-content: center;
@@ -54,6 +61,8 @@ body{
     padding: 30px;
 }
 
+
+/* Styles för innehållet */
 .card{
     width: 600px;
     height: 700px;
@@ -81,13 +90,15 @@ body{
     object-fit: contain;
 }
 
+
+/* Styles för footern */
 .footer{
     background-color: darkgray;
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: sticky; /* Gör att footern följer med när man scrollar */
     padding: 0;
     z-index: 1000;
 }
@@ -98,7 +109,7 @@ body{
 
 
 
-/* Dark mode */
+/* Style för Dark mode */
 
 .dark-mode{
     background-color: #222;
@@ -113,7 +124,6 @@ body{
     background-color: #333;
 }
 
-/*Dark mode*/
 
 .dark-mode-switch{
     display: flex;
@@ -125,6 +135,92 @@ body{
     font-size: 20px;
     margin: 0px 10px;
 }
+
+
+
+/*Style för Carosel*/
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Begränsa den maximala bredden för containern */
+    margin: 0 auto; /* Centrera containern horisontellt */
+}
+
+/* Styles för containern för bilderna i karusellen */
+.carosel {
+    position: relative;
+    width: 500px; /* Startbredd för bildcontainern */
+    margin: 50px auto; /* Lägg till marginal ovanför och under containern */
+    max-width: 100%; /* Gör att bildcontainern blir responsiv */
+    height: auto; /* Anpassa höjden automatiskt baserat på bredden */
+}
+
+/* Dölj alla bilder från början */
+.imgs {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Lägg till en smidig övergång när bilder visas/döljs */
+    display: none;
+    position: relative; 
+}
+
+/* Gör att bilderna skalas responsivt inuti containern */
+.imgs img {
+    width: 100%;
+    height: auto;
+}
+
+.imgs.show{
+    opacity: 1;
+    display: block;
+}
+
+/* Visa bildtext lite skuggad i bilden*/
+.caption {
+    
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%;   /* Gör att bildtexten sträcker sig över hela bildens bredd */
+    background-color: rgba(0, 0, 0, 0.5); /* Lägg till en halvgenomskinlig svart bakgrund på bildtexten */
+    color: white;  /* Fontfärgen */
+    padding: 10px; 
+    box-sizing: border-box;  
+}
+
+/* Positionera indikatorpunkterna under bildkarusellen */
+.dots {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 10px; /* Avstånd från botten av containern */
+    left: 50%; /* Centrera indikatorpunkterna horisontellt */
+    transform: translateX(-50%); /* Justera för centreringen */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Styles för indikatorpunkterna */
+.dot {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    background-color: lightgray;
+    border-radius: 100%;
+    display: inline-block;
+    transition: background-color 1s ease; /* Lägg till en smidig övergång när färgen ändras */
+    margin: 0 5px; /* Lägg till lite mellanrum mellan indikatorpunkterna */
+}
+
+/* Markera den aktiva indikatorpunkten med en annan färg */
+.dot.active {
+    background-color: indigo;
+}
+
+
+
+
 
 /*Så att sidan funkar på mindre skärmar*/
 
@@ -157,6 +253,3 @@ body{
 
 
 }
-
-
-
