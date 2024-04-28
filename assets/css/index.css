@@ -71,13 +71,15 @@ body{
     margin: 20px;
     text-align: center;
     box-shadow: 0 0 5px darkgray;
-    padding: 10px 30px 100px 30px;
+    padding: 10px 30px 10px 30px;
     line-height: 2;
     font-size: 18px;
+    word-wrap: break-word;
+    overflow: scroll;
 }
 
-.card h1{
-    font-size: 56px;
+.card h2{
+    font-size: 48px;
     font-weight: 900;
 }
 
@@ -86,10 +88,23 @@ body{
     font-weight: 700;
 }
 
-.card img{
+.cardimg{
+    width: 600px;
+    height: 400px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px darkgray;
+    padding: 10px 30px 10px 30px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.cardimg img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
+    max-width: 600px;
+    max-height: 400px;
 }
 
 
@@ -148,7 +163,7 @@ body{
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Begränsa den maximala bredden för containern */
+    max-width: 600px; /* Begränsa den maximala bredden för containern */
     margin: 0 auto; /* Centrera containern horisontellt */
 }
 
